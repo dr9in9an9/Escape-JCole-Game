@@ -15,6 +15,9 @@ run/main_scene="uid://bnjch4oqqe6bs"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Level="*uid://bnjch4oqqe6bs"
 [dotnet]
 
 project/assembly_name="EscapeJCole"

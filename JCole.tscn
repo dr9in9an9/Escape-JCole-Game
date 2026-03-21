@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dbr06vac4oe7a"]
+
+[ext_resource type="Texture2D" uid="uid://dowi2adnqwffp" path="res://icon.svg" id="1_jbdml"]
+[ext_resource type="Script" uid="uid://bt7rivpoqigg2" path="res://JCole.gd" id="1_ypquy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ypquy"]
+
+[node name="JCole" type="CharacterBody3D" unique_id=883560597]
+script = ExtResource("1_ypquy")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1022511074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+texture = ExtResource("1_jbdml")
+
+[node name="Timer" type="Timer" parent="." unique_id=483572656]
+autostart = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=117237598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_ypquy")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

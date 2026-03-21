@@ -33,4 +33,7 @@ transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 4, -0.5, -6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Player" parent="." unique_id=413613813 instance=ExtResource("3_2nifc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7)
+
+[node name="JCole" parent="." unique_id=562756307 instance=ExtResource("4_wkftn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
