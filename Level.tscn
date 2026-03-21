@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bnjch4oqqe6bs"]
 
 [ext_resource type="Script" uid="uid://do748fu1gcmrf" path="res://Level.gd" id="1_bexhn"]
-[ext_resource type="PackedScene" uid="uid://dkbqeptoac7a3" path="res://Wall.tscn" id="2_t7iv1"]
+[ext_resource type="PackedScene" uid="uid://dkbqeptoac7a3" path="res://SmallTileWhite.tscn" id="2_t7iv1"]
 [ext_resource type="PackedScene" uid="uid://yrvyku71u6gn" path="res://Player.tscn" id="3_2nifc"]
 
 [node name="Level" type="Node3D" unique_id=1754809668]
