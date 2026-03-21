@@ -30,3 +30,4 @@ func _on_timer_timeout():
 	path = Level.astar.get_point_path(Vector2i(position.x, position.z), Vector2i(Level.player.position.x, Level.player.position.z))
 	if path.get(0).distance_to(Vector2i(position.x, position.z)) < 0.25:
 		path.remove_at(0)
+	print(path.size())

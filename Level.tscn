@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://yrvyku71u6gn" path="res://Player.tscn" id="3_2nifc"]
 [ext_resource type="PackedScene" uid="uid://bmem0wl4w30rv" path="res://BigTileOrange.tscn" id="3_q4iis"]
 [ext_resource type="PackedScene" uid="uid://dd07rs04ogtu4" path="res://SmallTilePurple.tscn" id="4_m3clv"]
+[ext_resource type="PackedScene" uid="uid://dbr06vac4oe7a" path="res://JCole.tscn" id="6_m3clv"]
 
 [node name="Level" type="Node3D" unique_id=1754809668]
 script = ExtResource("1_bexhn")
@@ -12,13 +13,22 @@ script = ExtResource("1_bexhn")
 [node name="Walls" type="Node3D" parent="." unique_id=1243471045]
 
 [node name="stWhite" parent="Walls" unique_id=309916437 instance=ExtResource("2_t7iv1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 5, 8.5, 0.5, 0.5)
+
+[node name="stWhite8" parent="Walls" unique_id=222382874 instance=ExtResource("2_t7iv1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 5, 8.5, 0.5, 6.5)
 
 [node name="stWhite2" parent="Walls" unique_id=986547250 instance=ExtResource("2_t7iv1")]
 transform = Transform3D(30, 0, 0, 0, 2, 0, 0, 0, 1, 4, 1, 9.5)
 
-[node name="stWhite5" parent="Walls" unique_id=222382874 instance=ExtResource("2_t7iv1")]
+[node name="stWhite6" parent="Walls" unique_id=1079384827 instance=ExtResource("2_t7iv1")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.5, -1.5)
+
+[node name="stWhite5" parent="Walls" unique_id=307880289 instance=ExtResource("2_t7iv1")]
 transform = Transform3D(30, 0, 0, 0, 2, 0, 0, 0, 1, 4, 1, -21.5)
+
+[node name="stWhite7" parent="Walls" unique_id=416908406 instance=ExtResource("2_t7iv1")]
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, -11.5)
 
 [node name="stWhite3" parent="Walls" unique_id=1489008041 instance=ExtResource("2_t7iv1")]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 30, 19.5, 1, -6)
@@ -30,10 +40,10 @@ transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 30, -11.5, 1, -6)
 transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 4, -0.5, -6)
 
 [node name="stPurple" parent="Walls" unique_id=63961144 instance=ExtResource("4_m3clv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, -0.5)
 
 [node name="Player" parent="." unique_id=413613813 instance=ExtResource("3_2nifc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 7)
 
-[node name="JCole" parent="." unique_id=562756307 instance=ExtResource("4_wkftn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+[node name="JCole" parent="." unique_id=883560597 instance=ExtResource("6_m3clv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -7)

@@ -5,6 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_l6igm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00pd1"]
+shading_mode = 0
 albedo_color = Color(0.93333334, 0.4, 0.101960786, 1)
 albedo_texture = ExtResource("1_osrpy")
 uv1_triplanar = true
