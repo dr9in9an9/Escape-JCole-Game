@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dbr06vac4oe7a"]
 
 [ext_resource type="Texture2D" uid="uid://dowi2adnqwffp" path="res://icon.svg" id="1_jbdml"]
-[ext_resource type="Script" path="res://JCole.gd" id="1_ypquy"]
+[ext_resource type="Script" uid="uid://bt7rivpoqigg2" path="res://JCole.gd" id="1_ypquy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ypquy"]
+size = Vector3(0.25, 1, 0.25)
 
 [node name="JCole" type="CharacterBody3D" unique_id=883560597]
 script = ExtResource("1_ypquy")
