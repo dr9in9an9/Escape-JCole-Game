@@ -14,6 +14,10 @@ config/name="EscapeJCole"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Level="*uid://bnjch4oqqe6bs"
+
 [input]
 
 left={

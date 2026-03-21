@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://do748fu1gcmrf" path="res://Level.gd" id="1_bexhn"]
 [ext_resource type="PackedScene" uid="uid://dkbqeptoac7a3" path="res://Wall.tscn" id="2_t7iv1"]
 [ext_resource type="PackedScene" uid="uid://yrvyku71u6gn" path="res://Player.tscn" id="3_2nifc"]
+[ext_resource type="PackedScene" uid="uid://dbr06vac4oe7a" path="res://JCole.tscn" id="4_wkftn"]
 
 [node name="Level" type="Node3D" unique_id=1754809668]
 script = ExtResource("1_bexhn")
@@ -100,4 +101,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.5, 6.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.5, 7.5)
 
 [node name="Player" parent="." unique_id=413613813 instance=ExtResource("3_2nifc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7)
+
+[node name="JCole" parent="." unique_id=562756307 instance=ExtResource("4_wkftn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
