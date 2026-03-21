@@ -3,26 +3,34 @@
 [ext_resource type="Script" uid="uid://do748fu1gcmrf" path="res://Level.gd" id="1_bexhn"]
 [ext_resource type="PackedScene" uid="uid://dkbqeptoac7a3" path="res://SmallTileWhite.tscn" id="2_t7iv1"]
 [ext_resource type="PackedScene" uid="uid://yrvyku71u6gn" path="res://Player.tscn" id="3_2nifc"]
+[ext_resource type="PackedScene" uid="uid://bmem0wl4w30rv" path="res://BigTileOrange.tscn" id="3_q4iis"]
+[ext_resource type="PackedScene" uid="uid://dd07rs04ogtu4" path="res://SmallTilePurple.tscn" id="4_m3clv"]
 
 [node name="Level" type="Node3D" unique_id=1754809668]
 script = ExtResource("1_bexhn")
 
 [node name="Walls" type="Node3D" parent="." unique_id=1243471045]
 
-[node name="Node3D" parent="Walls" unique_id=309916437 instance=ExtResource("2_t7iv1")]
+[node name="stWhite" parent="Walls" unique_id=309916437 instance=ExtResource("2_t7iv1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 0.5)
 
-[node name="Node3D2" parent="Walls" unique_id=986547250 instance=ExtResource("2_t7iv1")]
+[node name="stWhite2" parent="Walls" unique_id=986547250 instance=ExtResource("2_t7iv1")]
 transform = Transform3D(30, 0, 0, 0, 2, 0, 0, 0, 1, 4, 1, 9.5)
 
-[node name="Node3D5" parent="Walls" unique_id=222382874 instance=ExtResource("2_t7iv1")]
+[node name="stWhite5" parent="Walls" unique_id=222382874 instance=ExtResource("2_t7iv1")]
 transform = Transform3D(30, 0, 0, 0, 2, 0, 0, 0, 1, 4, 1, -21.5)
 
-[node name="Node3D3" parent="Walls" unique_id=1489008041 instance=ExtResource("2_t7iv1")]
+[node name="stWhite3" parent="Walls" unique_id=1489008041 instance=ExtResource("2_t7iv1")]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 30, 19.5, 1, -6)
 
-[node name="Node3D4" parent="Walls" unique_id=2092938280 instance=ExtResource("2_t7iv1")]
+[node name="stWhite4" parent="Walls" unique_id=2092938280 instance=ExtResource("2_t7iv1")]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 30, -11.5, 1, -6)
+
+[node name="btOrange" parent="Walls" unique_id=804777467 instance=ExtResource("3_q4iis")]
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 4, -0.5, -6)
+
+[node name="stPurple" parent="Walls" unique_id=63961144 instance=ExtResource("4_m3clv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Player" parent="." unique_id=413613813 instance=ExtResource("3_2nifc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
