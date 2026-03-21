@@ -1,17 +1,17 @@
-[gd_scene format=3 uid="uid://dkbqeptoac7a3"]
+[gd_scene format=3 uid="uid://dd07rs04ogtu4"]
 
-[ext_resource type="Texture2D" uid="uid://dowi2adnqwffp" path="res://icon.svg" id="1_l6igm"]
+[ext_resource type="Texture2D" uid="uid://cbjyul6r5yuki" path="res://Textures/texture_07.png" id="1_5rdic"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l6igm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rytl6"]
-shading_mode = 0
-albedo_texture = ExtResource("1_l6igm")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar_sharpness = 0.9659363
-uv2_scale = Vector3(0, 0, 0)
+albedo_color = Color(0.67400944, 0.014367703, 0.68397164, 1)
+albedo_texture = ExtResource("1_5rdic")
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_ywhhs"]
+material = SubResource("StandardMaterial3D_rytl6")
 
 [node name="Node3D" type="StaticBody3D" unique_id=222382874]
 
@@ -19,5 +19,4 @@ uv2_scale = Vector3(0, 0, 0)
 shape = SubResource("BoxShape3D_l6igm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=289483754]
-material_override = SubResource("StandardMaterial3D_rytl6")
 mesh = SubResource("BoxMesh_ywhhs")

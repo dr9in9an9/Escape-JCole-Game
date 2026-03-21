@@ -9,17 +9,26 @@ var mouse_sensitivity = 0.001
 
 var pitch = 0
 
-var player_path: PackedVector2Array
+var menu_open = false
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+func _input(event):
+	if event.is_action_pressed("menu"):
+		if !menu_open:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if menu_open:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		menu_open = not menu_open
+
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		camera.rotate_y(-event.relative.x * mouse_sensitivity)
-		pitch -= event.relative.y * mouse_sensitivity
-		pitch = clamp(pitch, deg_to_rad(-80), deg_to_rad(80))
-		camera.rotation.x = pitch
+		if !menu_open:
+			camera.rotate_y(-event.relative.x * mouse_sensitivity)
+			pitch -= event.relative.y * mouse_sensitivity
+			pitch = clamp(pitch, deg_to_rad(-80), deg_to_rad(80))
+			camera.rotation.x = pitch
 
 func _physics_process(delta):
 	move_dir = Vector2.ZERO
