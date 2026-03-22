@@ -1,5 +1,7 @@
 extends Node3D
 
+class_name Level
+
 var astar: AStarGrid2D
 @onready var walls = $Walls
 @onready var player = $Player

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://beln150tinem"]
+
+[ext_resource type="Script" uid="uid://cxiodkf5yq2ld" path="res://globals.gd" id="1_38vhn"]
+
+[sub_resource type="Animation" id="Animation_38vhn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_acxym"]
+resource_name = "fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ukqg"]
+_data = {
+&"RESET": SubResource("Animation_38vhn"),
+&"fade_in": SubResource("Animation_acxym")
+}
+
+[node name="Globals" type="CanvasLayer" unique_id=1055770369]
+script = ExtResource("1_38vhn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=271706858]
+libraries/ = SubResource("AnimationLibrary_7ukqg")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1200400006]
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=922068375]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
