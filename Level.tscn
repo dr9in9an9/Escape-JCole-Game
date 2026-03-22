@@ -33,6 +33,9 @@ transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 5, 15.5, 1, 1.5)
 [node name="stWhite15" parent="Walls" unique_id=175940052 instance=ExtResource("2_t7iv1")]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 3, 4.5, 1, -5.5)
 
+[node name="stWhite27" parent="Walls" unique_id=2032811196 instance=ExtResource("2_t7iv1")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 2, 4.5, 1, -9)
+
 [node name="stWhite26" parent="Walls" unique_id=1455733595 instance=ExtResource("2_t7iv1")]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 3, -9.5, 1, -14.5)
 
@@ -76,7 +79,7 @@ transform = Transform3D(30, 0, 0, 0, 2, 0, 0, 0, 1, 4, 1, -24.5)
 transform = Transform3D(15, 0, 0, 0, 2, 0, 0, 0, 1, -3.5, 1, 4.5)
 
 [node name="stWhite17" parent="Walls" unique_id=1933224342 instance=ExtResource("2_t7iv1")]
-transform = Transform3D(16, 0, 0, 0, 2, 0, 0, 0, 1, -3, 1, -9.5)
+transform = Transform3D(16, 0, 0, 0, 2, 0, 0, 0, 1, -3, 1, -10.5)
 
 [node name="stWhite14" parent="Walls" unique_id=1537758407 instance=ExtResource("2_t7iv1")]
 transform = Transform3D(13, 0, 0, 0, 2, 0, 0, 0, 1, -2.5, 1, -6.5)
@@ -96,11 +99,23 @@ transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 33, 4, -0.5, -7.5)
 [node name="stPurple" parent="Walls" unique_id=63961144 instance=ExtResource("4_m3clv")]
 transform = Transform3D(5, 0, 0, 0, 0.5, 0, 0, 0, 3, -2.5, 0.25, -1.5)
 
+[node name="stPurple9" parent="Walls" unique_id=1479859414 instance=ExtResource("4_m3clv")]
+transform = Transform3D(5, 0, 0, 0, 0.5, 0, 0, 0, 3, 9.5, 0.25, -16.5)
+
+[node name="stPurple8" parent="Walls" unique_id=648326330 instance=ExtResource("4_m3clv")]
+transform = Transform3D(3, 0, 0, 0, 0.5, 0, 0, 0, 6, 17.5, 0.25, -18)
+
 [node name="stPurple4" parent="Walls" unique_id=1186571403 instance=ExtResource("4_m3clv")]
 transform = Transform3D(5, 0, 0, 0, 0.5, 0, 0, 0, 2, 7.5, 0.25, -11)
 
 [node name="stPurple2" parent="Walls" unique_id=167740259 instance=ExtResource("4_m3clv")]
 transform = Transform3D(2, 0, 0, 0, 0.5, 0, 0, 0, 2, 11, 0.25, -3)
+
+[node name="stPurple6" parent="Walls" unique_id=792482537 instance=ExtResource("4_m3clv")]
+transform = Transform3D(2, 0, 0, 0, 0.5, 0, 0, 0, 2, 0, 0.25, -8)
+
+[node name="stPurple7" parent="Walls" unique_id=348775333 instance=ExtResource("4_m3clv")]
+transform = Transform3D(7, 0, 0, 0, 0.5, 0, 0, 0, 1, -5.5, 0.25, -9.5)
 
 [node name="stPurple3" parent="Walls" unique_id=280122920 instance=ExtResource("4_m3clv")]
 transform = Transform3D(2, 0, 0, 0, 0.5, 0, 0, 0, 4, 13, 0.25, -6)
