@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bmem0wl4w30rv" path="res://BigTileOrange.tscn" id="3_q4iis"]
 [ext_resource type="PackedScene" uid="uid://dd07rs04ogtu4" path="res://SmallTilePurple.tscn" id="4_m3clv"]
 [ext_resource type="PackedScene" uid="uid://dbr06vac4oe7a" path="res://JCole.tscn" id="6_m3clv"]
+[ext_resource type="PackedScene" uid="uid://h6qpublu1ms1" path="res://Collectible.tscn" id="7_mxnmf"]
+[ext_resource type="Texture2D" uid="uid://2roavpm41bq0" path="res://Textures/texture_01.png" id="8_4eo0i"]
 
 [node name="Level" type="Node3D" unique_id=1754809668]
 script = ExtResource("1_bexhn")
@@ -43,7 +45,17 @@ transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 4, -0.5, -6)
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, -0.5)
 
 [node name="Player" parent="." unique_id=413613813 instance=ExtResource("3_2nifc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 5)
 
 [node name="JCole" parent="." unique_id=883560597 instance=ExtResource("6_m3clv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 1)
+
+[node name="Collectible" parent="." unique_id=641483829 instance=ExtResource("7_mxnmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 3)
+
+[node name="DebugPathSprite" type="Sprite3D" parent="." unique_id=1828194537]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0, 0, 0)
+billboard = 1
+texture = ExtResource("8_4eo0i")
+
+[node name="DebugNodes" type="Node" parent="." unique_id=1079755261]

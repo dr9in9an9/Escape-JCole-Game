@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://h6qpublu1ms1"]
+
+[ext_resource type="Texture2D" uid="uid://5p4i4wssaf3h" path="res://Textures/texture_11.png" id="1_svjgs"]
+[ext_resource type="Script" uid="uid://bnnaa2y47mua8" path="res://collectible.gd" id="1_ysl24"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ysl24"]
+
+[node name="Collectible" type="Node3D" unique_id=641483829]
+script = ExtResource("1_ysl24")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=897698893]
+transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, 0, 0.6, 0)
+texture = ExtResource("1_svjgs")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=549394886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2091543117]
+shape = SubResource("SphereShape3D_ysl24")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

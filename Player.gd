@@ -3,7 +3,7 @@ extends CharacterBody3D
 @onready var camera = $Camera3D
 
 var move_dir = Vector2.ZERO
-var MOVE_SPEED = 3
+var MOVE_SPEED = 5
 
 var mouse_sensitivity = 0.001
 
@@ -40,6 +40,9 @@ func _physics_process(delta):
 		move_dir.y = 1
 	if Input.is_action_pressed("backward"):
 		move_dir.y = -1
+	
+	if Input.is_action_pressed("Debugfly"):
+		camera.position.y += 1 * delta
 	
 	move_dir = move_dir.normalized()
 	
