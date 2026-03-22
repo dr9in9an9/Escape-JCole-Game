@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dku0iwdf6m18b"]
+
+[ext_resource type="Texture2D" uid="uid://wrb7s6jj47fq" path="res://Textures/door.png" id="1_1vvux"]
+[ext_resource type="Script" uid="uid://c7cpdrdoogyaa" path="res://Door.gd" id="1_iu8q0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6igm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00pd1"]
+shading_mode = 0
+albedo_texture = ExtResource("1_1vvux")
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ywhhs"]
+material = SubResource("StandardMaterial3D_00pd1")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cuixy"]
+size = Vector3(0.75, 1, 2)
+
+[node name="Door" type="StaticBody3D" unique_id=222382874]
+script = ExtResource("1_iu8q0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1903318628]
+shape = SubResource("BoxShape3D_l6igm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=289483754]
+mesh = SubResource("BoxMesh_ywhhs")
+
+[node name="Area2D" type="Area3D" parent="." unique_id=988210146]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area2D" unique_id=683374000]
+shape = SubResource("BoxShape3D_cuixy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

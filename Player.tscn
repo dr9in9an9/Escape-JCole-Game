@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://yrvyku71u6gn"]
 
 [ext_resource type="Script" uid="uid://d1jt61ehhjxl1" path="res://Player.gd" id="1_xhfnw"]
+[ext_resource type="Texture2D" uid="uid://cksjiypywc7rs" path="res://Textures/fists.png" id="2_kpjcp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
 radius = 0.2
@@ -16,3 +17,11 @@ shape = SubResource("CapsuleShape3D_0rwas")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1704489439]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=463078625]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1984135991]
+scale = Vector2(4.8, 2.7000003)
+texture = ExtResource("2_kpjcp")
+centered = false
+hframes = 2
