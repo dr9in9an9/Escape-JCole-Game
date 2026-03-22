@@ -1,36 +1,15 @@
 [gd_scene format=3 uid="uid://wvsm10o2j0ws"]
 
-[ext_resource type="Texture2D" uid="uid://cbjyul6r5yuki" path="res://Textures/Debug/texture_07.png" id="1_1oi6w"]
 [ext_resource type="Script" uid="uid://dr6efgcfp3ayj" path="res://Lure.gd" id="1_axetf"]
 [ext_resource type="AudioStream" uid="uid://d05cj2hekpto8" path="res://Sounds/Interact/Decoy_Sound_1.mp3" id="3_i03rx"]
+[ext_resource type="PackedScene" uid="uid://dd07rs04ogtu4" path="res://BuildingBlocks/Debug/SmallTilePurple.tscn" id="4_50bd4"]
 [ext_resource type="PackedScene" uid="uid://nmnawadtp5c5" path="res://Radio.tscn" id="4_y5xbo"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_l6igm"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rytl6"]
-shading_mode = 0
-albedo_color = Color(0.67400944, 0.014367703, 0.68397164, 1)
-albedo_texture = ExtResource("1_1oi6w")
-uv1_triplanar = true
-uv1_world_triplanar = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_ywhhs"]
-material = SubResource("StandardMaterial3D_rytl6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i03rx"]
 size = Vector3(1.7, 1, 1.7)
 
 [node name="Lure" type="Node3D" unique_id=152995746]
 script = ExtResource("1_axetf")
-
-[node name="Node3D" type="StaticBody3D" parent="." unique_id=222382874]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D" unique_id=1903318628]
-shape = SubResource("BoxShape3D_l6igm")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=289483754]
-cast_shadow = 0
-mesh = SubResource("BoxMesh_ywhhs")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1420045248]
 collision_layer = 0
@@ -55,6 +34,8 @@ one_shot = true
 
 [node name="Node3D2" parent="." unique_id=618203076 instance=ExtResource("4_y5xbo")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.7, 0)
+
+[node name="Node3D" parent="." unique_id=222382874 instance=ExtResource("4_50bd4")]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

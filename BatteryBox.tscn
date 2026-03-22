@@ -1,35 +1,14 @@
 [gd_scene format=3 uid="uid://bdugy2hx487v"]
 
 [ext_resource type="Script" uid="uid://br6eonvnsdrhf" path="res://BatteryBox.gd" id="1_4rqve"]
-[ext_resource type="Texture2D" uid="uid://cbjyul6r5yuki" path="res://Textures/Debug/texture_07.png" id="2_vb6h7"]
+[ext_resource type="PackedScene" uid="uid://dd07rs04ogtu4" path="res://BuildingBlocks/Debug/SmallTilePurple.tscn" id="3_10aol"]
 [ext_resource type="Texture2D" uid="uid://bkegc4yws7vc2" path="res://Textures/Items/Battery_Pack.png" id="3_vb6h7"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_l6igm"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rytl6"]
-shading_mode = 0
-albedo_color = Color(0.67400944, 0.014367703, 0.68397164, 1)
-albedo_texture = ExtResource("2_vb6h7")
-uv1_triplanar = true
-uv1_world_triplanar = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_ywhhs"]
-material = SubResource("StandardMaterial3D_rytl6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i03rx"]
 size = Vector3(1.7, 1, 1.7)
 
 [node name="BatteryBox" type="Node3D" unique_id=152995746]
 script = ExtResource("1_4rqve")
-
-[node name="Node3D" type="StaticBody3D" parent="." unique_id=222382874]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D" unique_id=1903318628]
-shape = SubResource("BoxShape3D_l6igm")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=289483754]
-cast_shadow = 0
-mesh = SubResource("BoxMesh_ywhhs")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1420045248]
 collision_layer = 0
@@ -43,6 +22,8 @@ shape = SubResource("BoxShape3D_i03rx")
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0.79999995, 0)
 billboard = 1
 texture = ExtResource("3_vb6h7")
+
+[node name="Node3D" parent="." unique_id=222382874 instance=ExtResource("3_10aol")]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
