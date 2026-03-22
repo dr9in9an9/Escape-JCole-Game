@@ -1,18 +1,17 @@
 [gd_scene format=3 uid="uid://dd07rs04ogtu4"]
 
-[ext_resource type="Texture2D" uid="uid://cbjyul6r5yuki" path="res://Textures/Debug/texture_07.png" id="1_5rdic"]
+[ext_resource type="Texture2D" uid="uid://44m3emwi2noe" path="res://Textures/Wall/Brick.png" id="1_6rfyk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l6igm"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rytl6"]
-shading_mode = 0
-albedo_color = Color(0.67400944, 0.014367703, 0.68397164, 1)
-albedo_texture = ExtResource("1_5rdic")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lt8fj"]
+albedo_texture = ExtResource("1_6rfyk")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_ywhhs"]
-material = SubResource("StandardMaterial3D_rytl6")
+material = SubResource("StandardMaterial3D_lt8fj")
 
 [node name="Node3D" type="StaticBody3D" unique_id=222382874]
 
