@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://nmnawadtp5c5"]
+
+[ext_resource type="Texture2D" uid="uid://cqprnpxsbl1qv" path="res://Textures/Items/radioBack.png" id="1_o5saj"]
+[ext_resource type="Texture2D" uid="uid://ckwlwq5fphhnc" path="res://Textures/Items/radioFront.png" id="2_qosux"]
+[ext_resource type="Texture2D" uid="uid://yclxq8varxap" path="res://Textures/Items/RadioSide.png" id="3_tk3qu"]
+[ext_resource type="Texture2D" uid="uid://i24d15a0bn4c" path="res://Textures/Items/top.png" id="4_og10a"]
+
+[node name="Node3D" type="Node3D" unique_id=618203076]
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=594051998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49543023, -0.3454305)
+texture = ExtResource("1_o5saj")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=59590048]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1026237, -3.449015)
+texture = ExtResource("2_qosux")
+
+[node name="Sprite3D3" type="Sprite3D" parent="." unique_id=1881431587]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.4509995, 0.25298023, -1.8240931)
+texture = ExtResource("3_tk3qu")
+
+[node name="Sprite3D4" type="Sprite3D" parent="." unique_id=1861142211]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.4127233, 0.25298023, -1.8240931)
+texture = ExtResource("3_tk3qu")
+
+[node name="Sprite3D5" type="Sprite3D" parent="." unique_id=1513683387]
+transform = Transform3D(-5.2453668e-08, -1.091, 4.7689124e-08, 0, -4.7689124e-08, -1.091, 1.2, -4.7689124e-08, 2.0845578e-15, -0.060929656, 1.3149114, -1.8388257)
+texture = ExtResource("4_og10a")

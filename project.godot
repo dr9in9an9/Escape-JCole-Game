@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Level="*uid://bnjch4oqqe6bs"
+Globals="*uid://beln150tinem"
 
 [dotnet]
 
@@ -71,6 +71,7 @@ Debugfly={
 3d_physics/layer_2="Player"
 3d_physics/layer_3="JCole"
 3d_physics/layer_4="Collectible"
+3d_physics/layer_5="Door"
 
 [physics]
 
