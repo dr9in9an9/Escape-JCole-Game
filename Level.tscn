@@ -380,7 +380,7 @@ transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, -25.5, 0, -16)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 9.5)
 
 [node name="JCole" parent="." unique_id=883560597 instance=ExtResource("6_m3clv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5, 0, -12.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -20.5)
 
 [node name="Collectible" parent="." unique_id=641483829 instance=ExtResource("7_mxnmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -22)

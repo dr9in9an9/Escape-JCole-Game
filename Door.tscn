@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dku0iwdf6m18b"]
 
-[ext_resource type="Texture2D" uid="uid://wrb7s6jj47fq" path="res://Textures/door.png" id="1_1vvux"]
 [ext_resource type="Script" uid="uid://c7cpdrdoogyaa" path="res://Door.gd" id="1_iu8q0"]
+[ext_resource type="Texture2D" uid="uid://xi85woc1ehbe" path="res://Textures/Items/door_blue.png" id="2_iu8q0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l6igm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00pd1"]
 shading_mode = 0
-albedo_texture = ExtResource("1_1vvux")
+albedo_texture = ExtResource("2_iu8q0")
 uv1_offset = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 uv1_world_triplanar = true
@@ -33,6 +33,8 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area2D" unique_id=683374000]
 shape = SubResource("BoxShape3D_cuixy")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1165464425]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

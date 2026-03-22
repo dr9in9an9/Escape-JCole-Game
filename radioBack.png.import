@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkegc4yws7vc2"
-path.s3tc="res://.godot/imported/Battery_Pack.png-6dfd45dcf00b26622547c6da026f296e.s3tc.ctex"
+uid="uid://byug2yoy7ifxw"
+path.s3tc="res://.godot/imported/radioBack.png-7d344eb2233c14ebdd882705944b6070.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Items/Battery_Pack.png"
-dest_files=["res://.godot/imported/Battery_Pack.png-6dfd45dcf00b26622547c6da026f296e.s3tc.ctex"]
+source_file="res://radioBack.png"
+dest_files=["res://.godot/imported/radioBack.png-7d344eb2233c14ebdd882705944b6070.s3tc.ctex"]
 
 [params]
 

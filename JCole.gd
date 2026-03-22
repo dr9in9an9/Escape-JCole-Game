@@ -8,9 +8,10 @@ var path: PackedVector2Array
 @onready var footstep_stream = $FootstepStream
 @onready var music_stream = $MusicStream
 
+const J_COLE_MUSIC_1_EAR_RAPE = preload("uid://co0rxjg8cdbws")
 const J_COLE_MUSIC_2_EAR_RAPE = preload("uid://n6i80oy2bitm")
 
-var MOVE_SPEED = 2.5
+var MOVE_SPEED = 4.5
 var forward = Vector3(1, 0, 0)
 var FOV = 60
 var los_last_frame = false
@@ -23,15 +24,19 @@ func _physics_process(delta):
 	var los = line_of_sight()
 	var clear_path = false
 	
-	if disabling_lure:
+	if disabling_lure or Globals.losing:
 		return
 	
 	if los:
+		if music_stream.playing == false:
+			random_music()
 		clear_path = clear_path()
 		los_last_frame = true
-		MOVE_SPEED = 4
+		MOVE_SPEED = 4.5
 	else:
-		MOVE_SPEED = 2.5
+		if los_last_frame:
+			$LOSTimer.start()
+			los_last_frame = false
 	
 	if clear_path:
 		# Go directly toward player if possible
@@ -43,8 +48,6 @@ func _physics_process(delta):
 		move_delta = forward * MOVE_SPEED
 	elif clear_path_last_frame:
 		pathfind()
-		los_last_frame = false
-		music_stream.stop()
 		clear_path_last_frame = false
 	
 	if clear_path == false:
@@ -59,14 +62,23 @@ func _physics_process(delta):
 			move_delta = move_delta.normalized() * MOVE_SPEED
 		else:
 			pathfind()
-		#Globals.level.debug_path_sprite.global_position = Vector3(path.get(0).x + 0.5, 0.5, path.get(0).y)
 	velocity = move_delta
 	move_and_slide()
 
 func random_music():
-	music_stream.stream = J_COLE_MUSIC_2_EAR_RAPE
-	music_stream.play(76.32)
-	print("Random music!")
+	var randnum = (randi() % 2)
+	if randnum == 0:
+		music_stream.stream = J_COLE_MUSIC_2_EAR_RAPE
+		if randi() % 2 == 0:
+			music_stream.play(76.32)
+		else:
+			music_stream.play(18.5)
+	else:
+		music_stream.stream = J_COLE_MUSIC_1_EAR_RAPE
+		if randi() % 2 == 0:
+			music_stream.play(138.32)
+		else:
+			music_stream.play(17.8)
 
 func line_of_sight() -> bool:
 	visibility_ray.target_position = to_local(Globals.level.player.global_position)
@@ -102,3 +114,18 @@ func pathfind():
 	else:
 		dest = Vector2i(floor(Globals.level.player.position.x), floor(Globals.level.player.position.z))
 	path = Globals.level.astar.get_point_path(Vector2i(floor(position.x), floor(position.z)), dest)
+
+
+func _on_area_3d_body_entered(body):
+	Globals.can_move = false
+	$DeathStream.play()
+	music_stream.stop()
+	Globals.losing = true
+	$FootstepStream.stop()
+
+func _on_death_stream_finished():
+	Globals.lose_game()
+
+func _on_los_timer_timeout():
+	music_stream.stop()
+	MOVE_SPEED = 2.5

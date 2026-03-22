@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cxiodkf5yq2ld" path="res://globals.gd" id="1_38vhn"]
 [ext_resource type="AudioStream" uid="uid://ctsh0fjjeheej" path="res://Sounds/Omnience/Background_Hum_2.wav" id="2_acxym"]
+[ext_resource type="FontFile" uid="uid://by5wh84de7b0r" path="res://COMIC.TTF" id="2_govd7"]
+[ext_resource type="Texture2D" uid="uid://jurcwnvpowmn" path="res://Textures/Items/Mixtape.png" id="3_2rn3w"]
+[ext_resource type="Texture2D" uid="uid://dnk3l0yrwn7u0" path="res://Textures/F key.png" id="4_2rn3w"]
+[ext_resource type="AudioStream" uid="uid://y0xjes4tn4ky" path="res://Sounds/Interact/Door_Unlock.mp3" id="6_ao8o2"]
 
 [sub_resource type="Animation" id="Animation_38vhn"]
 length = 0.001
@@ -50,10 +54,37 @@ libraries/ = SubResource("AnimationLibrary_7ukqg")
 color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=922068375]
+visible = false
+
+[node name="MixtapeLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=43161241]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = -99.0
+offset_right = 309.0
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("2_govd7")
+theme_override_font_sizes/normal_font_size = 64
+text = "0/4"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=15050082]
+position = Vector2(215.99998, 601)
+scale = Vector2(0.07446288, 0.07446288)
+texture = ExtResource("3_2rn3w")
+
+[node name="SpriteF" type="Sprite2D" parent="CanvasLayer" unique_id=1497053607]
+position = Vector2(579.00006, 478.00003)
+scale = Vector2(1.9609374, 1.9609374)
+texture = ExtResource("4_2rn3w")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=557533588]
 stream = ExtResource("2_acxym")
 volume_db = -12.297
 pitch_scale = 0.52
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=499537281]
+stream = ExtResource("6_ao8o2")
+volume_db = 4.356
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

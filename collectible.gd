@@ -6,6 +6,7 @@ var just_spawned = false
 @export var item = 0
 
 func _ready():
+	print(name)
 	$Sprite3D.frame = item
 
 func _physics_process(delta):
@@ -16,5 +17,10 @@ func _on_area_3d_body_entered(body):
 	if just_spawned:
 		just_spawned = false
 		return
-	body.pickup_item(item)
-	queue_free()
+	if item == 5:
+		Globals.acquire_mixtape()
+		if Globals.mixtapes != 4:
+			queue_free()
+	else:
+		body.pickup_item(item)
+		queue_free()

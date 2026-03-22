@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://br6eonvnsdrhf" path="res://BatteryBox.gd" id="1_4rqve"]
 [ext_resource type="Texture2D" uid="uid://cbjyul6r5yuki" path="res://Textures/Debug/texture_07.png" id="2_vb6h7"]
+[ext_resource type="Texture2D" uid="uid://bkegc4yws7vc2" path="res://Textures/Items/Battery_Pack.png" id="3_vb6h7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l6igm"]
 
@@ -14,21 +15,6 @@ uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_ywhhs"]
 material = SubResource("StandardMaterial3D_rytl6")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_1oi6w"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_axetf"]
-load_path = "res://.godot/imported/texture_07.png-c844f54535635285820410e1113073cd.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i03rx"]
-shading_mode = 0
-albedo_color = Color(0.27515873, 3.1585805e-07, 7.219613e-08, 1)
-albedo_texture = SubResource("CompressedTexture2D_axetf")
-uv1_triplanar = true
-uv1_world_triplanar = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_y5xbo"]
-material = SubResource("StandardMaterial3D_i03rx")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i03rx"]
 size = Vector3(1.7, 1, 1.7)
@@ -45,16 +31,6 @@ shape = SubResource("BoxShape3D_l6igm")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_ywhhs")
 
-[node name="Node3D2" type="StaticBody3D" parent="." unique_id=1737211034]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.6, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D2" unique_id=287940865]
-shape = SubResource("BoxShape3D_1oi6w")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D2" unique_id=1745473182]
-cast_shadow = 0
-mesh = SubResource("BoxMesh_y5xbo")
-
 [node name="Area3D" type="Area3D" parent="." unique_id=1420045248]
 collision_layer = 0
 collision_mask = 2
@@ -62,6 +38,11 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1386427247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0, 0)
 shape = SubResource("BoxShape3D_i03rx")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=858517319]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0.79999995, 0)
+billboard = 1
+texture = ExtResource("3_vb6h7")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

@@ -6,7 +6,7 @@ extends CharacterBody3D
 const COLLECTIBLE = preload("uid://h6qpublu1ms1")
 
 var move_dir = Vector2.ZERO
-var MOVE_SPEED = 5
+var MOVE_SPEED = 3
 
 var mouse_sensitivity = 0.001
 
@@ -18,6 +18,7 @@ var item = -1
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	$CanvasLayer/Sprite2D.frame = 4
 
 func _input(event):
 	if Globals.can_move == false:
@@ -93,6 +94,7 @@ func _physics_process(delta):
 	else:
 		fists.visible = true
 		fists.frame = item
+		print("Fists")
 
 func pickup_item(new_item):
 	if item != -1:
