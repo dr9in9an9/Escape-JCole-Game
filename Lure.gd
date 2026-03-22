@@ -27,7 +27,7 @@ func on_interact():
 	if playing:
 		return
 	playing = true
-	stream.play()
+	stream.play(6.0)
 	Globals.level.lure_is_playing = true
 	Globals.level.lure_object = self
 	Globals.level.player.item = -1

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://u3xgi2gqkabb"
+path="res://.godot/imported/Key_Pickup(Undetided).mp3-2163470b219ceb0092038d900e825494.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Interact/Unedited Audio/Key_Pickup(Undetided).mp3"
+dest_files=["res://.godot/imported/Key_Pickup(Undetided).mp3-2163470b219ceb0092038d900e825494.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

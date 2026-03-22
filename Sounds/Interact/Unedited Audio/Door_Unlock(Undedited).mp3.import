@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rxltcbn50pc"
+path="res://.godot/imported/Door_Unlock(Undedited).mp3-7365d0ece993759ac053ae94fe3286bb.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Interact/Unedited Audio/Door_Unlock(Undedited).mp3"
+dest_files=["res://.godot/imported/Door_Unlock(Undedited).mp3-7365d0ece993759ac053ae94fe3286bb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

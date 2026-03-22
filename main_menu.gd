@@ -15,9 +15,7 @@ func _on_quit_button_pressed():
 	get_tree().quit()
 
 func _on_animation_player_animation_finished(anim_name):
-	queue_free()
-	Globals.start_game()
-	#stream.play()
+	stream.play()
 
 func _on_audio_stream_player_2d_finished():
 	queue_free()
