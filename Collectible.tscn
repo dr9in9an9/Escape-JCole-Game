@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://h6qpublu1ms1"]
 
-[ext_resource type="Texture2D" uid="uid://5p4i4wssaf3h" path="res://Textures/texture_11.png" id="1_svjgs"]
+[ext_resource type="Texture2D" uid="uid://5p4i4wssaf3h" path="res://Textures/Debug/texture_11.png" id="1_svjgs"]
 [ext_resource type="Script" uid="uid://bnnaa2y47mua8" path="res://collectible.gd" id="1_ysl24"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ysl24"]

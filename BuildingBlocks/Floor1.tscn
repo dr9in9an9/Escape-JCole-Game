@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ckciwyaqsm8ce"]
+
+[ext_resource type="Texture2D" uid="uid://boe6qsucr7xvh" path="res://Textures/Floor/Floor_1.jpg" id="1_it2du"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6igm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tga0p"]
+albedo_texture = ExtResource("1_it2du")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ywhhs"]
+material = SubResource("StandardMaterial3D_tga0p")
+
+[node name="Node3D" type="StaticBody3D" unique_id=222382874]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1903318628]
+shape = SubResource("BoxShape3D_l6igm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=289483754]
+mesh = SubResource("BoxMesh_ywhhs")
