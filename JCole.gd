@@ -7,6 +7,7 @@ var path: PackedVector2Array
 var MOVE_SPEED = 2.5
 var forward = Vector3(1, 0, 0)
 var FOV = 60
+var los_last_frame = false
 
 func _physics_process(delta):
 	var move_delta: Vector3
@@ -19,17 +20,24 @@ func _physics_process(delta):
 		to_player = to_player.normalized()
 		forward = to_player
 		move_delta = forward * MOVE_SPEED
+		los_last_frame = true
 	else:
+		if los_last_frame:
+			pathfind()
+			los_last_frame = false
+		
 		if path.size() > 0:
 			var top = path.get(0) + Vector2(0.5, 0.5)
-			while path.size() > 0 and top.distance_to(Vector2(position.x, position.z)) < 0.05:
+			if path.size() > 0 and top.distance_to(Vector2(global_position.x, global_position.z)) < 0.05:
 				path.remove_at(0)
 				top = path.get(0) + Vector2(0.5, 0.5)
 			move_delta = (Vector3(top.x, 0, top.y) - position)
 			move_delta.y = 0
 			forward = move_delta.normalized()
 			move_delta = move_delta.normalized() * MOVE_SPEED
-		#Level.debug_path_sprite.global_position = Vector3(path.get(0).x + 0.5, 0.5, path.get(0).y)
+		else:
+			pathfind()
+		Level.debug_path_sprite.global_position = Vector3(path.get(0).x + 0.5, 0.5, path.get(0).y)
 	velocity = move_delta
 	move_and_slide()
 
@@ -41,14 +49,9 @@ func line_of_sight() -> bool:
 			return true
 	return false
 
-func _on_timer_timeout():
+#func _on_timer_timeout():
+	#pathfind()
+
+func pathfind():
 	path.clear()
-	
 	path = Level.astar.get_point_path(Vector2i(floor(position.x), floor(position.z)), Vector2i(floor(Level.player.position.x), floor(Level.player.position.z)))
-	#if (path.get(0) + Vector2(0.5, 0.5)).distance_to(Vector2i(position.x, position.z)) < 0.25:
-	print(path.size())
-	if path.size() > 1:
-		path.remove_at(0)
-	if path.size() > 1:
-		path.remove_at(0)
-	print(path.size())

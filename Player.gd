@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @onready var camera = $Camera3D
+@onready var fists = $CanvasLayer/Sprite2D
 
 var move_dir = Vector2.ZERO
 var MOVE_SPEED = 5
@@ -10,6 +11,8 @@ var mouse_sensitivity = 0.001
 var pitch = 0
 
 var menu_open = false
+
+var item = -1
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -41,8 +44,18 @@ func _physics_process(delta):
 	if Input.is_action_pressed("backward"):
 		move_dir.y = -1
 	
+	if Input.is_action_just_pressed("interact"):
+		if Level.interact_popup:
+			if Level.interact_object:
+				if item == Level.interact_object.item:
+					Level.interact_object.queue_free()
+					item = -1
+					Level.regenerate_path_mesh = true
+					Level.interact_popup = false
+					Level.interact_object = null
+	
 	if Input.is_action_pressed("Debugfly"):
-		camera.position.y += 1 * delta
+		camera.position.y += 6 * delta
 	
 	move_dir = move_dir.normalized()
 	
@@ -67,3 +80,9 @@ func _physics_process(delta):
 	velocity = move_delta
 	
 	move_and_slide()
+	
+	if item == -1:
+		fists.visible = false
+	else:
+		fists.visible = true
+		fists.frame = item

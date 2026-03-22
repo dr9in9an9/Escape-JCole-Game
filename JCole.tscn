@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bd8h2mvq15rvs" path="res://Textures/jcole.png" id="2_ypquy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ypquy"]
-size = Vector3(0.25, 1, 0.25)
+size = Vector3(0.5, 1, 0.5)
 
 [node name="JCole" type="CharacterBody3D" unique_id=883560597]
 collision_layer = 4
@@ -16,7 +16,6 @@ billboard = 1
 texture = ExtResource("2_ypquy")
 
 [node name="Timer" type="Timer" parent="." unique_id=483572656]
-wait_time = 5.0
 autostart = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=117237598]
