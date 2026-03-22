@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EscapeJCole"
-run/main_scene="uid://bnjch4oqqe6bs"
+run/main_scene="uid://rpoioax41jxk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
