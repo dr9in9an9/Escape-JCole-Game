@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://celkx1u5djymy"]
+
+[ext_resource type="Script" uid="uid://bah1avdn8y8px" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://br67gci2c13e8" path="res://Textures/splashimage.png" id="2_7vrkn"]
+[ext_resource type="Shader" uid="uid://dffosyv0vwrry" path="res://main_menu.gdshader" id="2_fu7sn"]
+[ext_resource type="FontFile" uid="uid://by5wh84de7b0r" path="res://COMIC.TTF" id="4_jix8l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_glbon"]
+shader = ExtResource("2_fu7sn")
+shader_parameter/pixel_size = 2.0
+shader_parameter/lod_blur = 0.7
+shader_parameter/chroma_offset_px = 0.8
+shader_parameter/saturation = 0.78
+shader_parameter/contrast = 0.9
+shader_parameter/shadow_lift = 0.06
+shader_parameter/scanline_strength = 0.04
+shader_parameter/vignette_strength = 0.1
+shader_parameter/noise_strength = 0.025
+shader_parameter/noise_speed = 18.0
+shader_parameter/base_jitter_px = 0.08
+shader_parameter/base_jitter_speed = 12.0
+shader_parameter/glitchiness = 0.18
+shader_parameter/glitch_rate = 6.0
+shader_parameter/glitch_shift_px = 1.8
+shader_parameter/glitch_window_min = 0.03
+shader_parameter/glitch_window_max = 0.1
+shader_parameter/blue_band_start_y = 0.45
+shader_parameter/blue_band_speed = 0.06
+shader_parameter/blue_band_width = 0.035
+shader_parameter/blue_band_strength = 0.1
+shader_parameter/blue_band_glitch = 0.25
+shader_parameter/blue_band_distort_px = 1.2
+
+[node name="Main Menu" type="Control" unique_id=1897606545]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1029273277]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=807140130]
+scale = Vector2(1.2378242, 0.613852)
+texture = ExtResource("2_7vrkn")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2125255732]
+material = SubResource("ShaderMaterial_glbon")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1514712219]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = 69.0
+offset_right = 55.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/normal_font = ExtResource("4_jix8l")
+theme_override_font_sizes/normal_font_size = 64
+text = "Escape from
+J Cole's"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=101559664]
+offset_left = 56.0
+offset_top = 409.0
+offset_right = 310.0
+offset_bottom = 695.0
+
+[node name="PlayButton" type="MenuButton" parent="CanvasLayer/VBoxContainer" unique_id=1939788617]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_jix8l")
+theme_override_font_sizes/font_size = 32
+text = "Begin Adventure"
+
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/PlayButton" to="." method="_on_play_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

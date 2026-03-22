@@ -20,6 +20,8 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input(event):
+	if Globals.can_move == false:
+		return
 	if event.is_action_pressed("menu"):
 		if !menu_open:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -28,6 +30,8 @@ func _input(event):
 		menu_open = not menu_open
 
 func _unhandled_input(event):
+	if Globals.can_move == false:
+		return
 	if event is InputEventMouseMotion:
 		if !menu_open:
 			camera.rotate_y(-event.relative.x * mouse_sensitivity)
@@ -36,6 +40,9 @@ func _unhandled_input(event):
 			camera.rotation.x = pitch
 
 func _physics_process(delta):
+	if Globals.can_move == false:
+		return
+	
 	move_dir = Vector2.ZERO
 	if Input.is_action_pressed("left"):
 		move_dir.x = -1
@@ -47,12 +54,12 @@ func _physics_process(delta):
 		move_dir.y = -1
 	
 	if Input.is_action_just_pressed("interact"):
-		if Level.interact_popup:
-			if Level.interact_object:
-				if Level.interact_object.item == -1 || Level.interact_object.item == item:
-					Level.interact_object.on_interact()
-					Level.interact_popup = false
-					Level.interact_object = null
+		if Globals.level.interact_popup:
+			if Globals.level.interact_object:
+				if Globals.level.interact_object.item == -1 || Globals.level.interact_object.item == item:
+					Globals.level.interact_object.on_interact()
+					Globals.level.interact_popup = false
+					Globals.level.interact_object = null
 	
 	if Input.is_action_pressed("Debugfly"):
 		camera.position.y += 6 * delta
@@ -93,6 +100,6 @@ func pickup_item(new_item):
 		inst.global_position = Vector3(floor(global_position.x + 0.5), 0, floor(global_position.z + 0.5))
 		inst.item = item
 		inst.just_spawned = true
-		Level.add_child(inst)
+		Globals.level.add_child(inst)
 	
 	item = new_item

@@ -19,7 +19,7 @@ func _physics_process(delta):
 		return
 	
 	if los:
-		var to_player = Level.player.global_position - global_position
+		var to_player = Globals.level.player.global_position - global_position
 		to_player.y = 0
 		to_player = to_player.normalized()
 		forward = to_player
@@ -41,23 +41,23 @@ func _physics_process(delta):
 			move_delta = move_delta.normalized() * MOVE_SPEED
 		else:
 			pathfind()
-		Level.debug_path_sprite.global_position = Vector3(path.get(0).x + 0.5, 0.5, path.get(0).y)
+		Globals.level.debug_path_sprite.global_position = Vector3(path.get(0).x + 0.5, 0.5, path.get(0).y)
 	velocity = move_delta
 	move_and_slide()
 
 func line_of_sight() -> bool:
-	visibility_ray.target_position = to_local(Level.player.global_position)
+	visibility_ray.target_position = to_local(Globals.level.player.global_position)
 	visibility_ray.force_raycast_update()
 	if visibility_ray.is_colliding():
-		if visibility_ray.get_collider() == Level.player:
+		if visibility_ray.get_collider() == Globals.level.player:
 			return true
 	return false
 
 func pathfind():
 	path.clear()
 	var dest: Vector2i
-	if Level.lure_is_playing:
-		dest = Vector2i(floor(Level.lure_object.position.x), floor(Level.lure_object.position.z))
+	if Globals.level.lure_is_playing:
+		dest = Vector2i(floor(Globals.level.lure_object.position.x), floor(Globals.level.lure_object.position.z))
 	else:
-		dest = Vector2i(floor(Level.player.position.x), floor(Level.player.position.z))
-	path = Level.astar.get_point_path(Vector2i(floor(position.x), floor(position.z)), dest)
+		dest = Vector2i(floor(Globals.level.player.position.x), floor(Globals.level.player.position.z))
+	path = Globals.level.astar.get_point_path(Vector2i(floor(position.x), floor(position.z)), dest)
