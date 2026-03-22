@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dkbqeptoac7a3"]
+
+[ext_resource type="Texture2D" uid="uid://bdqm2jo0ntb3f" path="res://Textures/Wall/Concrete_Wall_3.jpg" id="1_imorh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6igm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgxo7"]
+albedo_color = Color(0.7333774, 0.86023855, 0.8753191, 1)
+albedo_texture = ExtResource("1_imorh")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ywhhs"]
+material = SubResource("StandardMaterial3D_sgxo7")
+
+[node name="Node3D" type="StaticBody3D" unique_id=222382874]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1903318628]
+shape = SubResource("BoxShape3D_l6igm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=289483754]
+cast_shadow = 0
+mesh = SubResource("BoxMesh_ywhhs")
