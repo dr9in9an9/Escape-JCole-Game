@@ -1,18 +1,18 @@
-[gd_scene format=3 uid="uid://dkbqeptoac7a3"]
+[gd_scene format=3 uid="uid://cqj3oyjtvc4wk"]
 
-[ext_resource type="Texture2D" uid="uid://bdqm2jo0ntb3f" path="res://Textures/Wall/Concrete_Wall_3.jpg" id="1_imorh"]
+[ext_resource type="Texture2D" uid="uid://dhiey8eav6tn0" path="res://Textures/Debug/texture_08.png" id="1_n72gm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l6igm"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgxo7"]
-albedo_color = Color(0.9646798, 0.8020857, 0.57373494, 1)
-albedo_texture = ExtResource("1_imorh")
-uv1_scale = Vector3(0.5, 0.5, 0.5)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00pd1"]
+shading_mode = 0
+albedo_color = Color(0.26498675, 0.80218154, 0.9104844, 1)
+albedo_texture = ExtResource("1_n72gm")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_ywhhs"]
-material = SubResource("StandardMaterial3D_sgxo7")
+material = SubResource("StandardMaterial3D_00pd1")
 
 [node name="Node3D" type="StaticBody3D" unique_id=222382874]
 
@@ -20,5 +20,4 @@ material = SubResource("StandardMaterial3D_sgxo7")
 shape = SubResource("BoxShape3D_l6igm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=289483754]
-cast_shadow = 0
 mesh = SubResource("BoxMesh_ywhhs")
