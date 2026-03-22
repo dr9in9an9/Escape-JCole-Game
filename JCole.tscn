@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bt7rivpoqigg2" path="res://JCole.gd" id="1_ypquy"]
 [ext_resource type="Texture2D" uid="uid://bd8h2mvq15rvs" path="res://Textures/jcole.png" id="2_ypquy"]
+[ext_resource type="AudioStream" uid="uid://meowku4eweyg" path="res://Sounds/Player_FootSteps/Player_Footstep_1.wav" id="3_dly5q"]
+[ext_resource type="AudioStream" uid="uid://n6i80oy2bitm" path="res://Sounds/JCole/HuntMusic/JCole_Music_2_EarRape.wav" id="4_bsqcx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ypquy"]
 size = Vector3(0.5, 1, 0.5)
@@ -22,20 +24,27 @@ autostart = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_ypquy")
 
-[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1033230165]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.4, 0)
+[node name="RayCast3DLeft" type="RayCast3D" parent="." unique_id=1033230165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.14999996, 0)
 target_position = Vector3(0, 0, 10)
+collision_mask = 3
 
-[node name="RayCast3D2" type="RayCast3D" parent="." unique_id=1530365967]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.4, 0)
+[node name="RayCast3DRight" type="RayCast3D" parent="." unique_id=1530365967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.14999996, 0)
 target_position = Vector3(0, 0, 10)
+collision_mask = 3
 
 [node name="RayCast3DVisbiility" type="RayCast3D" parent="." unique_id=1482023922]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39999998, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
 target_position = Vector3(0, 0, 10)
 collision_mask = 3
 debug_shape_custom_color = Color(0, 0, 1, 1)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1378451207]
+[node name="FootstepStream" type="AudioStreamPlayer3D" parent="." unique_id=1378451207]
+stream = ExtResource("3_dly5q")
+autoplay = true
+
+[node name="MusicStream" type="AudioStreamPlayer3D" parent="." unique_id=495781269]
+stream = ExtResource("4_bsqcx")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

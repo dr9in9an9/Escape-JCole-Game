@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://beln150tinem"]
 
 [ext_resource type="Script" uid="uid://cxiodkf5yq2ld" path="res://globals.gd" id="1_38vhn"]
+[ext_resource type="AudioStream" uid="uid://ctsh0fjjeheej" path="res://Sounds/Omnience/Background_Hum_2.wav" id="2_acxym"]
 
 [sub_resource type="Animation" id="Animation_38vhn"]
 length = 0.001
@@ -49,5 +50,10 @@ libraries/ = SubResource("AnimationLibrary_7ukqg")
 color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=922068375]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=557533588]
+stream = ExtResource("2_acxym")
+volume_db = -12.297
+pitch_scale = 0.52
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
