@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://yrvyku71u6gn" path="res://Player.tscn" id="3_2nifc"]
 [ext_resource type="PackedScene" uid="uid://bmem0wl4w30rv" path="res://BuildingBlocks/Debug/BigTileOrange.tscn" id="3_q4iis"]
 [ext_resource type="PackedScene" uid="uid://dd07rs04ogtu4" path="res://BuildingBlocks/Debug/SmallTilePurple.tscn" id="4_m3clv"]
+[ext_resource type="PackedScene" uid="uid://bdugy2hx487v" path="res://BatteryBox.tscn" id="5_5qkpu"]
 [ext_resource type="PackedScene" uid="uid://dbr06vac4oe7a" path="res://JCole.tscn" id="6_m3clv"]
+[ext_resource type="PackedScene" uid="uid://dku0iwdf6m18b" path="res://Door.tscn" id="7_dcckh"]
 [ext_resource type="PackedScene" uid="uid://h6qpublu1ms1" path="res://Collectible.tscn" id="7_mxnmf"]
 [ext_resource type="PackedScene" uid="uid://x44ur8ktmha7" path="res://BuildingBlocks/Wall4.tscn" id="8_dn5x0"]
 [ext_resource type="PackedScene" uid="uid://ckciwyaqsm8ce" path="res://BuildingBlocks/Floor1.tscn" id="9_86ljf"]
@@ -14,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dsbtqjpown2pl" path="res://BuildingBlocks/Floor3.tscn" id="12_dn5x0"]
 [ext_resource type="PackedScene" uid="uid://dhivgys6h2lo5" path="res://BuildingBlocks/Floor4.tscn" id="13_esphl"]
 [ext_resource type="PackedScene" uid="uid://ugf3fv0eukw6" path="res://BuildingBlocks/Wall2.tscn" id="14_dn5x0"]
+[ext_resource type="PackedScene" uid="uid://wvsm10o2j0ws" path="res://Lure.tscn" id="16_dcckh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_esphl"]
 load_path = "res://.godot/imported/texture_01.png-6c7b261c604144034fca0776ebfa37e8.s3tc.ctex"
@@ -57,7 +60,7 @@ transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 3, 12.5, 1, -22.5)
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 10, 4.5, 1, 4)
 
 [node name="stWhite18" parent="Walls" unique_id=37905593 instance=ExtResource("2_t7iv1")]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 10, 4.5, 1, -15)
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 12, 4.5, 1, -16)
 
 [node name="stWhite11" parent="Walls" unique_id=1942855945 instance=ExtResource("2_t7iv1")]
 transform = Transform3D(5, 0, 0, 0, 2, 0, 0, 0, 1, 9.5, 1, 1.5)
@@ -146,17 +149,17 @@ transform = Transform3D(2, 0, 0, 0, 0.5, 0, 0, 0, 4, 13, 0.25, -6)
 [node name="stPurple5" parent="Walls" unique_id=1277024426 instance=ExtResource("4_m3clv")]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 3, 16.5, 0.25, 1.5)
 
-[node name="Door" parent="Walls" unique_id=1913408662 instance=ExtResource("9_86ljf")]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 2, 4.5, 1, -3)
-
-[node name="CollisionShape3D" parent="Walls/Door/Area2D" parent_id_path=PackedInt32Array(1913408662, 988210146) index="0" unique_id=683374000]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
-
-[node name="Lure" parent="Walls" unique_id=152995746 instance=ExtResource("6_3ywx5")]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 9, -7.450581e-09, -9)
-
-[node name="BatteryBox" parent="Walls" unique_id=1080333470 instance=ExtResource("7_ofirr")]
+[node name="BatteryBox" parent="Walls" unique_id=152995746 instance=ExtResource("5_5qkpu")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 9, 0, 5)
+
+[node name="Lure" parent="Walls" unique_id=284021439 instance=ExtResource("16_dcckh")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 9, 0, -9)
+
+[node name="Door" parent="Walls" unique_id=1548419769 instance=ExtResource("7_dcckh")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 2, 4.5, 1, -23)
+
+[node name="CollisionShape3D" parent="Walls/Door/Area2D" parent_id_path=PackedInt32Array(1548419769, 988210146) index="0" unique_id=683374000]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="Player" parent="." unique_id=413613813 instance=ExtResource("3_2nifc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 7)
@@ -257,3 +260,5 @@ transform = Transform3D(0.5, 0, 0, 0, 3, 0, 0, 0, 2.5, 12.75, 1, 7.75)
 
 [node name="Node3D15" parent="." unique_id=1504792530 instance=ExtResource("14_dn5x0")]
 transform = Transform3D(0.5, 0, 0, 0, 3, 0, 0, 0, 2.5, 19.25, 1, 7.75)
+
+[editable path="Walls/Door"]

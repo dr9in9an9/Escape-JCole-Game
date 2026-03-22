@@ -40,19 +40,21 @@ func generate_path_mesh():
 	astar.update()
 
 	for wall in $Walls.get_children():
-		var special = wall.name.begins_with("Lure") || wall.name.begins_with("BatteryBox")
-		if special:
-			wall = wall.get_node("Node3D")
-		
-		if wall.position.y <= 0 and !special:
-			continue
+		var special = wall is Lure or wall is BatteryBox
 		var wall_width = wall.scale.x;
 		var wall_height = wall.scale.z;
+		if special:
+			wall = wall.get_node("Node3D")
+			wall_width *= wall.scale.x
+			wall_height *= wall.scale.z
 		
-		var left = floor(wall.position.x - wall_width * 0.5)
-		var right = floor(wall.position.x + wall_width * 0.5)
-		var top = floor(wall.position.z - wall_height * 0.5)
-		var bottom = floor(wall.position.z + wall_height * 0.5)
+		if wall.global_position.y <= 0 and !special:
+			continue
+		
+		var left = floor(wall.global_position.x - wall_width * 0.5)
+		var right = floor(wall.global_position.x + wall_width * 0.5)
+		var top = floor(wall.global_position.z - wall_height * 0.5)
+		var bottom = floor(wall.global_position.z + wall_height * 0.5)
 		var region = Rect2i(left, top, right - left, bottom - top)
 		
 		astar.fill_solid_region(region, true)

@@ -1,5 +1,7 @@
 extends Node3D
 
+class_name Lure
+
 var playing = false
 var item = -1
 @onready var stream = $AudioStreamPlayer3D
