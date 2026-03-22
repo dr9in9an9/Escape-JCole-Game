@@ -24,6 +24,7 @@ func acquire_mixtape():
 func _ready():
 	losing = false
 	mixtapes = 0
+	mixtape_label.text = "0/4"
 
 func start_game():
 	losing = false

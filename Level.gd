@@ -13,6 +13,7 @@ var interact_object = null
 
 var lure_is_playing = false
 var lure_object = null
+var lure_pos: Vector2i
 
 var grid_width = 100
 var grid_height = 100
@@ -50,7 +51,7 @@ func generate_path_mesh():
 			wall_width *= wall.scale.x
 			wall_height *= wall.scale.z
 		
-		if wall.global_position.y <= 0 and !special:
+		if wall.global_position.y + wall.scale.y * 0.5 <= 0 and !special:
 			continue
 		
 		var left = floor(wall.global_position.x - wall_width * 0.5)

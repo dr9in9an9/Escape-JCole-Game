@@ -5,6 +5,7 @@ class_name Lure
 var playing = false
 var item = -1
 @onready var stream = $AudioStreamPlayer3D
+@export var jcole_offset: Vector3
 
 func _on_area_3d_body_entered(body):
 	if body == Globals.level.jcole:
@@ -31,10 +32,14 @@ func on_interact():
 	Globals.level.lure_is_playing = true
 	Globals.level.lure_object = self
 	Globals.level.player.item = -1
+	Globals.level.lure_pos = Vector2i(floor(Globals.level.player.global_position.x), floor(Globals.level.player.global_position.z))
 
 func _on_timer_timeout():
 	stream.stop()
 	$Timer2.start()
+
+func get_dest():
+	return Vector2i(floor(position.x) + jcole_offset.x, floor(position.z + jcole_offset.z) + jcole_offset.z)
 
 func _on_timer_2_timeout():
 	Globals.level.jcole.disabling_lure = false

@@ -62,9 +62,6 @@ func _physics_process(delta):
 					Globals.level.interact_popup = false
 					Globals.level.interact_object = null
 	
-	if Input.is_action_pressed("Debugfly"):
-		camera.position.y += 6 * delta
-	
 	move_dir = move_dir.normalized()
 	
 	var forward = -camera.global_transform.basis.z
@@ -75,15 +72,7 @@ func _physics_process(delta):
 	right = right.normalized()
 	
 	var move_delta: Vector3
-	#if player_path.size() > 0:
-		#var top = player_path.get(0)
-		#while player_path.size() > 0 and top.distance_to(Vector2(position.x, position.z)) < 0.1:
-			#player_path.remove_at(0)
-			#top = player_path.get(0)
-		#move_delta = (Vector3(top.x, 0, top.y) - position)
-		#move_delta.y = 0
-		#move_delta = move_delta.normalized() * MOVE_SPEED
-	#else:
+
 	move_delta = (right * move_dir.x + forward * move_dir.y).normalized() * MOVE_SPEED
 	velocity = move_delta
 	

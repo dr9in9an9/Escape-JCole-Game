@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dbr06vac4oe7a"]
 
 [ext_resource type="Script" uid="uid://bt7rivpoqigg2" path="res://JCole.gd" id="1_ypquy"]
-[ext_resource type="Texture2D" uid="uid://bd8h2mvq15rvs" path="res://Textures/jcole.png" id="2_ypquy"]
+[ext_resource type="Texture2D" uid="uid://baqs4nmvp6vdl" path="res://Textures/Animation/Cole_Panel.png" id="2_bsqcx"]
 [ext_resource type="AudioStream" uid="uid://n6i80oy2bitm" path="res://Sounds/JCole/HuntMusic/JCole_Music_2_EarRape.wav" id="4_bsqcx"]
 [ext_resource type="AudioStream" uid="uid://b8bdc4x4ee51w" path="res://Audio/death.mp3" id="5_5vvcm"]
 
@@ -15,6 +15,60 @@ loop = true
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bsqcx"]
 radius = 0.65
 
+[sub_resource type="Animation" id="Animation_5vvcm"]
+resource_name = "Pause"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_l33rt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7of7s"]
+resource_name = "Run"
+length = 0.6
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cuihq"]
+_data = {
+&"Pause": SubResource("Animation_5vvcm"),
+&"RESET": SubResource("Animation_l33rt"),
+&"Run": SubResource("Animation_7of7s")
+}
+
 [node name="JCole" type="CharacterBody3D" unique_id=883560597]
 collision_layer = 4
 script = ExtResource("1_ypquy")
@@ -22,7 +76,9 @@ script = ExtResource("1_ypquy")
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1022511074]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0.7, 0)
 billboard = 1
-texture = ExtResource("2_ypquy")
+texture = ExtResource("2_bsqcx")
+hframes = 3
+vframes = 4
 
 [node name="Timer" type="Timer" parent="." unique_id=483572656]
 autostart = true
@@ -49,7 +105,7 @@ debug_shape_custom_color = Color(0, 0, 1, 1)
 
 [node name="FootstepStream" type="AudioStreamPlayer3D" parent="." unique_id=1378451207]
 stream = SubResource("AudioStreamMP3_bsqcx")
-volume_db = 2.609
+volume_db = 6.088
 autoplay = true
 max_distance = 10.0
 panning_strength = 1.5
@@ -72,6 +128,9 @@ volume_db = 7.826
 [node name="LOSTimer" type="Timer" parent="." unique_id=1687096078]
 wait_time = 0.2
 one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2024960200]
+libraries/ = SubResource("AnimationLibrary_cuihq")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
