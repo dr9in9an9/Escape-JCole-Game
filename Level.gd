@@ -3,6 +3,7 @@ extends Node3D
 var astar: AStarGrid2D
 @onready var walls = $Walls
 @onready var player = $Player
+#@onready var debug_path_sprite = $DebugPathSprite
 
 var grid_width = 100
 var grid_height = 100
@@ -21,26 +22,13 @@ func _ready():
 		var wall_width = wall.scale.x;
 		var wall_height = wall.scale.z;
 		
-		var left = floor(wall.position.z - 0.5 - wall_width * 0.5)
-		var right = ceil(wall.position.z - 0.5 + wall_width * 0.5)
-		var top = floor(wall.position.x - 0.5 - wall_height * 0.5)
-		var bottom = ceil(wall.position.x - 0.5 + wall_height * 0.5)
-		var region = Rect2i(left, right - left + 1, top, bottom - top + 1)
-		#var region = get_wall_rect(wall)
-		#print(region)
-		#
+		var left = floor(wall.position.z - wall_width * 0.5)
+		var right = floor(wall.position.z + wall_width * 0.5)
+		var top = floor(wall.position.x - wall_height * 0.5)
+		var bottom = floor(wall.position.x + wall_height * 0.5)
+		var region = Rect2i(left, right - left, top, bottom - top)
+		
 		astar.fill_solid_region(region, true)
 	
 	#$Player.player_path = Level.astar.get_point_path(Vector2i($Player.position.x, $Player.position.z), Vector2i(5, 2))
 	#print($Player.player_path.size())
-
-func get_wall_rect(wall: Node3D) -> Rect2i:
-	var size = Vector2i(wall.scale.x, wall.scale.z)
-	var center := Vector2(wall.global_position.x - 0.5, wall.global_position.z - 0.5)
-
-	var top_left := Vector2i(
-		center.x - int(floor(size.x / 2.0)),
-		center.y - int(floor(size.y / 2.0))
-	)
-
-	return Rect2i(top_left, size)
