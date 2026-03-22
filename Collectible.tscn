@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://h6qpublu1ms1"]
 
 [ext_resource type="Script" uid="uid://bnnaa2y47mua8" path="res://collectible.gd" id="1_ysl24"]
-[ext_resource type="Texture2D" uid="uid://clypl4vtw57nl" path="res://Textures/items.png" id="2_ysl24"]
+[ext_resource type="Texture2D" uid="uid://d3etkvjysmggd" path="res://Textures/Items/items.png" id="2_ysl24"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ysl24"]
 
@@ -9,9 +9,9 @@
 script = ExtResource("1_ysl24")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=897698893]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.6, 0)
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0, 0.6, 0)
 texture = ExtResource("2_ysl24")
-hframes = 4
+hframes = 6
 
 [node name="Area3D" type="Area3D" parent="." unique_id=549394886]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
