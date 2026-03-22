@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkegc4yws7vc2"
-path.s3tc="res://.godot/imported/Battery_Pack.png-6dfd45dcf00b26622547c6da026f296e.s3tc.ctex"
+uid="uid://xi85woc1ehbe"
+path.s3tc="res://.godot/imported/door_blue.png-dc029defeb8d53f31f228ba663d96971.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Items/Battery_Pack.png"
-dest_files=["res://.godot/imported/Battery_Pack.png-6dfd45dcf00b26622547c6da026f296e.s3tc.ctex"]
+source_file="res://Textures/Items/door_blue.png"
+dest_files=["res://.godot/imported/door_blue.png-dc029defeb8d53f31f228ba663d96971.s3tc.ctex"]
 
 [params]
 

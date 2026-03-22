@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://crvais1yqrqx3"]
+
+[ext_resource type="FontFile" uid="uid://by5wh84de7b0r" path="res://COMIC.TTF" id="1_5xft5"]
+[ext_resource type="Script" uid="uid://rh8abxpsjdnc" path="res://lose_screen.gd" id="1_mx8i5"]
+
+[node name="Lose_Screen" type="Control" unique_id=1107223615]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mx8i5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1048932537]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=795168607]
+offset_left = 44.0
+offset_top = 72.0
+offset_right = 849.0
+offset_bottom = 590.0
+theme_override_fonts/normal_font = ExtResource("1_5xft5")
+theme_override_font_sizes/normal_font_size = 64
+text = "OH NO! J Cole caught me. This is the WORST day of my life EVER! But no... I CAN'T give up! Not like this!"
+
+[node name="PlayButton" type="MenuButton" parent="CanvasLayer" unique_id=1574452730]
+offset_left = 810.0
+offset_top = 501.0
+offset_right = 1064.0
+offset_bottom = 555.0
+theme_override_colors/font_color = Color(0.61339027, 0.61339027, 0.61339027, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_5xft5")
+theme_override_font_sizes/font_size = 32
+text = "Retry
+"
+
+[connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]

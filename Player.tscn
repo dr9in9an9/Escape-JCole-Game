@@ -21,7 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=463078625]
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1984135991]
-scale = Vector2(4.8, 2.7000003)
+scale = Vector2(1.0666667, 0.6835443)
 texture = ExtResource("2_kpjcp")
 centered = false
-hframes = 2
+hframes = 5

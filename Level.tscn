@@ -347,7 +347,7 @@ item = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 9.5)
 
 [node name="JCole" parent="." unique_id=883560597 instance=ExtResource("6_m3clv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5, 0, -12.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -20.5)
 
 [node name="Collectible" parent="." unique_id=641483829 instance=ExtResource("7_mxnmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -18)
@@ -417,6 +417,7 @@ item = 2
 
 [node name="Key2" parent="." unique_id=1566628988 instance=ExtResource("7_mxnmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -10)
+item = 0
 
 [node name="Key3" parent="." unique_id=157197876 instance=ExtResource("7_mxnmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9)

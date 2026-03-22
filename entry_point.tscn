@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://rpoioax41jxk"]
 
+[ext_resource type="Script" uid="uid://7jfyljeb6llo" path="res://entry_point.gd" id="1_h8jua"]
+
 [node name="EntryPoint" type="Node3D" unique_id=278997315]
+script = ExtResource("1_h8jua")
