@@ -5,8 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://yrvyku71u6gn" path="res://Player.tscn" id="3_2nifc"]
 [ext_resource type="PackedScene" uid="uid://bmem0wl4w30rv" path="res://BigTileOrange.tscn" id="3_q4iis"]
 [ext_resource type="PackedScene" uid="uid://dd07rs04ogtu4" path="res://SmallTilePurple.tscn" id="4_m3clv"]
+[ext_resource type="PackedScene" uid="uid://wvsm10o2j0ws" path="res://Lure.tscn" id="6_3ywx5"]
 [ext_resource type="PackedScene" uid="uid://dbr06vac4oe7a" path="res://JCole.tscn" id="6_m3clv"]
 [ext_resource type="PackedScene" uid="uid://h6qpublu1ms1" path="res://Collectible.tscn" id="7_mxnmf"]
+[ext_resource type="PackedScene" uid="uid://bdugy2hx487v" path="res://BatteryBox.tscn" id="7_ofirr"]
 [ext_resource type="Texture2D" uid="uid://2roavpm41bq0" path="res://Textures/texture_01.png" id="8_4eo0i"]
 [ext_resource type="PackedScene" uid="uid://dku0iwdf6m18b" path="res://Door.tscn" id="9_86ljf"]
 
@@ -131,6 +133,12 @@ transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 2, 4.5, 1, -3)
 
 [node name="CollisionShape3D" parent="Walls/Door/Area2D" parent_id_path=PackedInt32Array(1913408662, 988210146) index="0" unique_id=683374000]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Lure" parent="Walls" unique_id=152995746 instance=ExtResource("6_3ywx5")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 9, -7.450581e-09, -9)
+
+[node name="BatteryBox" parent="Walls" unique_id=1080333470 instance=ExtResource("7_ofirr")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 9, 0, 5)
 
 [node name="Player" parent="." unique_id=413613813 instance=ExtResource("3_2nifc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 7)

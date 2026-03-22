@@ -24,3 +24,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
 scale = Vector2(4.8, 2.7000003)
 texture = ExtResource("2_kpjcp")
 centered = false
+hframes = 2

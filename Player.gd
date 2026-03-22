@@ -3,6 +3,8 @@ extends CharacterBody3D
 @onready var camera = $Camera3D
 @onready var fists = $CanvasLayer/Sprite2D
 
+const COLLECTIBLE = preload("uid://h6qpublu1ms1")
+
 var move_dir = Vector2.ZERO
 var MOVE_SPEED = 5
 
@@ -47,10 +49,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("interact"):
 		if Level.interact_popup:
 			if Level.interact_object:
-				if item == Level.interact_object.item:
-					Level.interact_object.queue_free()
-					item = -1
-					Level.regenerate_path_mesh = true
+				if Level.interact_object.item == -1 || Level.interact_object.item == item:
+					Level.interact_object.on_interact()
 					Level.interact_popup = false
 					Level.interact_object = null
 	
@@ -86,3 +86,13 @@ func _physics_process(delta):
 	else:
 		fists.visible = true
 		fists.frame = item
+
+func pickup_item(new_item):
+	if item != -1:
+		var inst = COLLECTIBLE.instantiate()
+		inst.global_position = Vector3(floor(global_position.x + 0.5), 0, floor(global_position.z + 0.5))
+		inst.item = item
+		inst.just_spawned = true
+		Level.add_child(inst)
+	
+	item = new_item

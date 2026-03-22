@@ -8,11 +8,15 @@ var MOVE_SPEED = 2.5
 var forward = Vector3(1, 0, 0)
 var FOV = 60
 var los_last_frame = false
+var disabling_lure = false
 
 func _physics_process(delta):
 	var move_delta: Vector3
 	
 	var los = line_of_sight()
+	
+	if disabling_lure:
+		return
 	
 	if los:
 		var to_player = Level.player.global_position - global_position
@@ -49,9 +53,11 @@ func line_of_sight() -> bool:
 			return true
 	return false
 
-#func _on_timer_timeout():
-	#pathfind()
-
 func pathfind():
 	path.clear()
-	path = Level.astar.get_point_path(Vector2i(floor(position.x), floor(position.z)), Vector2i(floor(Level.player.position.x), floor(Level.player.position.z)))
+	var dest: Vector2i
+	if Level.lure_is_playing:
+		dest = Vector2i(floor(Level.lure_object.position.x), floor(Level.lure_object.position.z))
+	else:
+		dest = Vector2i(floor(Level.player.position.x), floor(Level.player.position.z))
+	path = Level.astar.get_point_path(Vector2i(floor(position.x), floor(position.z)), dest)

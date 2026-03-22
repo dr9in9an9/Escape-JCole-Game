@@ -4,9 +4,13 @@ var astar: AStarGrid2D
 @onready var walls = $Walls
 @onready var player = $Player
 @onready var debug_path_sprite = $DebugPathSprite
+@onready var jcole = $JCole
 
 var interact_popup = false
 var interact_object = null
+
+var lure_is_playing = false
+var lure_object = null
 
 var grid_width = 100
 var grid_height = 100
@@ -36,7 +40,11 @@ func generate_path_mesh():
 	astar.update()
 
 	for wall in $Walls.get_children():
-		if wall.position.y <= 0:
+		var special = wall.name.begins_with("Lure") || wall.name.begins_with("BatteryBox")
+		if special:
+			wall = wall.get_node("Node3D")
+		
+		if wall.position.y <= 0 and !special:
 			continue
 		var wall_width = wall.scale.x;
 		var wall_height = wall.scale.z;
